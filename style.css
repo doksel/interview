@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,700,800|Raleway:300,400,700,800|Roboto:300,400,700');
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    background: rgb(242, 242, 242);
+}
+
+.buttons{
+    text-align: center; 
+}
+.btn{
+    background: rgb(45, 99, 208);
+    font-size: 14px;
+    color: white;
+    padding: 10px 20px;
+    font-weight: 800;
+    border-radius: 7px;
+}
+
+.btn:hover{
+    background: rgb(134, 171, 245);
+}
+
+.title, span{
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+
+}
+
+span{
+    color: rgb(45, 99, 208);
+    font-size: 24px;
+}
+
+fieldset{
+    width: 40%;
+    border-radius: 10px;
+    margin: 50px auto;
+    padding: 30px;
+}
+
+.text{
+    text-align: center;
+}
+
+.spiner{
+    height: 200px;
+    width: 200px;
+    background: url(spiner.gif) no-repeat center;
+    margin: auto;
+}
