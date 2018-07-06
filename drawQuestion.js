@@ -5,8 +5,10 @@ function start(){
     drawQuestion(i);
 
     function drawQuestion(i){
-        myMain.innerHTML = "";
+        
         const myForm = doc.createElement('form');
+        myForm.className = 'myForm';
+        
         const myFieldset = doc.createElement('fieldset');
         if(forms[i].id == 9){
             prelastStep(i);
@@ -60,7 +62,7 @@ function start(){
             }   
 
             myForm.appendChild(myFieldset);
-            myMain.appendChild(myForm);   
+            myMain.appendChild(myForm);  
         }
 
         function nextQuestion(){
@@ -74,9 +76,11 @@ function start(){
                 };
                 check();
                 if(a){
-                    console.log(a);
                     i++;
-                    drawQuestion(i);
+                    $('.myForm').fadeOut(1000, function(){
+                        myMain.innerHTML = "";
+                        drawQuestion(i);
+                    });
                 }     
             }else if(forms[i].type == 'number'){
                 let a = !!document.querySelector('.input').value;
@@ -86,9 +90,11 @@ function start(){
                 };
                 check();
                 if(a){
-                    console.log(a);
                     i++;
-                    drawQuestion(i);
+                    $('.myForm').fadeOut(1000, function(){
+                        myMain.innerHTML = "";
+                        drawQuestion(i)
+                    });
                 }     
             }   
         }
