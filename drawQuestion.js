@@ -1,5 +1,5 @@
+const doc = document;
 function start(){
-    const doc = document;
     let myMain = doc.querySelector('main');
     let i=0;
     drawQuestion(i);
@@ -141,23 +141,30 @@ function start(){
             for(let j=0;j<forms[i].input.length;j++){
                 const myLablelInput = doc.createElement('p');
                 const myInput = doc.createElement('input');
-                myInput.setAttribute('type', forms[i].type);
+                myInput.setAttribute('type', forms[i].type[j]);
+                myInput.className = forms[i].type[j];
                 myLablelInput.style.textAlign = 'center';
                 myLablelInput.innerHTML += forms[i].input[j];
 
                 myLablelInput.appendChild(myInput);
                 myFieldset.appendChild(myLablelInput);
             }
+            const message = doc.createElement('span');
+            message.className = 'message';
             const buttons = doc.createElement('div');
             buttons.className = 'buttons';
             const buttonSubmit = doc.createElement('button');
-            buttonSubmit.className = 'btn buttons prev';
+            buttonSubmit.className = 'btn';
             buttonSubmit.innerHTML = 'Отправить';
+            myFieldset.appendChild(message);
             buttons.appendChild(buttonSubmit);
             myFieldset.appendChild(buttons);
 
             myForm.appendChild(myFieldset);
             myMain.appendChild(myForm);
+
+            buttonSubmit.addEventListener('click', validMail);
+            buttonSubmit.addEventListener('click', validPhone);
         }
     }
 }
